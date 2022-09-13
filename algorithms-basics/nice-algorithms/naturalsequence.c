@@ -1,33 +1,35 @@
 #include <stdio.h>
-
-int nDigitsCmp(int n)
-{
-    int sum = 0;
+int f1(int n)
+{ // data
+    int nalg = 1;
+    int result = 0;
     int mult = 0;
-    int count = 1;
-    int countalg = 1;
+    int base = 9;
+    int resultsaver = 0; // filter for specific cases
 
-    while (sum < n)
+    while (result < n)
     {
-        mult = 9 * count * countalg;
-        sum = sum + mult;
-        count = count * 10;
-        countalg = countalg + 1;
+        resultsaver = result;
+        mult = base * nalg;
+        result = result + mult;
+        base = base * 10;
+        nalg++;
     } // end while()
-
-    sum = n - sum;
-    return (sum);
-} // end nDigitsCmp
-
+    return (resultsaver);
+} // end f1()
 int main()
-{
-    int position = 0;
-    int digitsAccount = 0;
-    printf("term position: ");
-    scanf("%d", &position);
+{ // data
+    int n = 0;
+    int sum = 0;
+    int digits = 0;
+    scanf("%d", &n);
 
-    digitsAccount = nDigitsCmp(position);
-    printf("%d ", digitsAccount);
+    sum = f1(n); // how many digits cover (absolute)
+
+    digits = n - sum;
+
+    printf("%d", digits);
+
     // return
     return (0);
 } // end main()
