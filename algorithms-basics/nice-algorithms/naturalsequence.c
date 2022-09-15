@@ -9,7 +9,7 @@ int f1(int n)
 
     while (result < n)
     {
-        resultsaver = result;
+         resultsaver = result;
         mult = base * nalg;
         result = result + mult;
         base = base * 10;
