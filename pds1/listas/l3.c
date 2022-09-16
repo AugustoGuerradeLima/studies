@@ -1,3 +1,7 @@
+/*
+lista 3 - augusto guerra de lima 2022101086
+engenharia de sistemas
+*/
 #include <stdio.h>
 //---------------------------------------------------------------------------q1
 float max(float a, float b, float c)
@@ -128,6 +132,7 @@ void f3(void)
 int main(void)
 {
     int c = 0;
+    printf("augusto guerra de lima 2022101086\n");
     // menu
     do
     {
