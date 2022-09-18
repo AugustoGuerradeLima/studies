@@ -146,6 +146,59 @@ void f9(void)
     cin >> h;
     cout << "volume do cilindro: " << volumeCilindro(raio, h) << endl;
 } // end f9()
+//--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1j
+float hipotenusa(float b, float c)
+{
+    float a = sqrt((b * b) + (c * c));
+    return (a);
+}
+void f10(void)
+{
+    float b, c;
+    cout << "de o valor dos catetos: " << endl;
+    cin >> b;
+    cin >> c;
+    cout << "hipotenusa: " << hipotenusa(b, c) << endl;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1k
+void calculoDeRaiz(float a, float b, float c)
+{
+    float delta = b * b - 4.0 * a * c;
+    float x1, x2;
+    if (delta >= 0.0)
+    {
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        cout << "raizes: " << endl;
+        if (x1 >= 0.0)
+        {
+            cout << x1 << endl;
+        }
+        if (x2 >= 0.0)
+        {
+            cout << x2 << endl;
+        }
+        if (x1 < 0.0 && x2 < 0.0)
+        {
+            cout << "nao ha raizes positivas" << endl;
+        }
+    }
+    else
+    {
+        cout << "nao existem raizes reais" << endl;
+    }
+}
+void f11(void)
+{
+    float a, b, c;
+    cout << "coeficiente a: " << endl;
+    cin >> a;
+    cout << "coeficiente b: " << endl;
+    cin >> b;
+    cout << "coeficiente c: " << endl;
+    cin >> c;
+    calculoDeRaiz(a, b, c);
+}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------main()
 int main()
 {
@@ -194,6 +247,12 @@ int main()
             break;
         case 'i':
             f9();
+            break;
+        case 'j':
+            f10();
+            break;
+        case 'k':
+            f11();
             break;
         case '0':
             break;
