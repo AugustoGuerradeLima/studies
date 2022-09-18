@@ -64,27 +64,24 @@ void f4(void)
     cout << "area: " << areaCirculo(raio) << endl;
 } // end f4()
 //--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1e
-float areaCaixa(float a, float b, float c)
+float areaTriangulo(float b, float c)
 {
-    float result = 4 * (a * c) + 2 * (a * b);
+    float result = b * c / 2;
     return (result);
 }
-// procedimento f5()
 void f5(void)
 {
-    float a, b, c;
-    cout << "comprimento: " << endl;
-    cin >> a;
-    cout << "largura: " << endl;
+    float b, c;
+    cout << "base: " << endl;
     cin >> b;
     cout << "altura: " << endl;
     cin >> c;
-    cout << "area da caixa: " << areaCaixa(a, b, c) << endl;
-} // end f5()
+    cout << "area: " << areaTriangulo(b, c) << endl;
+}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1f
-float volumeCaixa(float a, float b, float c)
+float areaCaixa(float a, float b, float c)
 {
-    float result = a * b * c;
+    float result = 4 * (a * c) + 2 * (a * b);
     return (result);
 }
 // procedimento f6()
@@ -97,25 +94,76 @@ void f6(void)
     cin >> b;
     cout << "altura: " << endl;
     cin >> c;
-    cout << "volume da caixa: " << volumeCaixa(a, b, c) << endl;
+    cout << "area da caixa: " << areaCaixa(a, b, c) << endl;
 } // end f6()
+//--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1g
+float volumeCaixa(float a, float b, float c)
+{
+    float result = a * b * c;
+    return (result);
+}
+// procedimento f7()
+void f7(void)
+{
+    float a, b, c;
+    cout << "comprimento: " << endl;
+    cin >> a;
+    cout << "largura: " << endl;
+    cin >> b;
+    cout << "altura: " << endl;
+    cin >> c;
+    cout << "volume da caixa: " << volumeCaixa(a, b, c) << endl;
+} // end f7()
+//--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1h
+float areaCilindro(float r, float h)
+{
+    float result = 2 * (M_PI * pow(r, 2)) + (2 * M_PI * r * h);
+    return (result);
+}
+// procedimento f8()
+void f8(void)
+{
+    float raio, h;
+    cout << "raio: " << endl;
+    cin >> raio;
+    cout << "altura: " << endl;
+    cin >> h;
+    cout << "area do cilindro: " << areaCilindro(raio, h) << endl;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------------------questao-1i
+float volumeCilindro(float r, float h)
+{
+    float result = M_PI * pow(r, 2) * h;
+    return (result);
+}
+// procedimento f9()
+void f9(void)
+{
+    float raio, h;
+    cout << "raio: " << endl;
+    cin >> raio;
+    cout << "altura: " << endl;
+    cin >> h;
+    cout << "volume do cilindro: " << volumeCilindro(raio, h) << endl;
+} // end f9()
 //--------------------------------------------------------------------------------------------------------------------------------------------------------main()
 int main()
 {
-    char c = 'z';
+    char c = '0';
     do
     {
-        cout << "a) media" << endl;
-        cout << "b) media ponderada" << endl;
+        cout << "a)media" << endl;
+        cout << "b)media ponderada" << endl;
         cout << "c)perimetro do circulo" << endl;
         cout << "d)area do circulo" << endl;
         cout << "e)area do triangulo" << endl;
-        cout << "f) area da caixa" << endl;
-        cout << "g) volume da caixa" << endl;
+        cout << "f)area da caixa" << endl;
+        cout << "g)volume da caixa" << endl;
         cout << "h)area do cilindro" << endl;
         cout << "i)volume do cilindro" << endl;
         cout << "j)hipotenusa" << endl;
         cout << "k)raiz positiva" << endl;
+        cout << "0)parar" << endl;
         cin >> c;
 
         switch (c)
@@ -141,10 +189,18 @@ int main()
         case 'g':
             f7();
             break;
+        case 'h':
+            f8();
+            break;
+        case 'i':
+            f9();
+            break;
+        case '0':
+            break;
         default:
             cout << "valor invalido" << endl;
             break;
         }
-    } while (c != 'z');
+    } while (c != '0');
     return (0);
 } // end main()
