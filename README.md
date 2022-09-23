@@ -1,7 +1,6 @@
 <div>
 <img src='https://c.tenor.com/5ry-200hErMAAAAM/hacker-hacker-man.gif'>
 <img src='https://c.tenor.com/NYrgLNGuy7YAAAAM/the-c-programming-language-uncle-dane.gif'>
-<img src='https://thumbs.gfycat.com/NiceInsidiousGrub-size_restricted.gif'>
 </div>
 <h1>c-logic</h1>
 basic codes in c like, university algorithms and interesting algorithms for computational logic.
