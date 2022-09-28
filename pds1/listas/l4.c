@@ -89,6 +89,30 @@ void f7()
 	scanf("%d%d",&a,&b);
 	printf("\nresto: %d\n",res(a,b));
 }
+//--------------------------------------------questao1h
+int form(int n)
+{
+	if(n==1)return(1);
+	return(n*n+form(n-1));
+}
+void f8()
+{
+	int n;
+	scanf("%d",&n);
+	printf("\nsomatorio: %d\n",form(n));
+}
+//--------------------------------------------questao1i
+int mmc(int a, int b)
+{
+//mmc(a,b)= a * b/mdc(a,b)
+return(a*(b/mdc(a,b)));
+}
+void f9()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	mmc(a,b);
+}
 //--------------------------------------------questao2(main)
 int main()
 {
@@ -103,7 +127,7 @@ printf("\n4 - fibonacci");
 printf("\n5 - primo");
 printf("\n6 - decrescente");
 printf("\n7 - resto");
-printf("\n8 - somatorio");
+printf("\n8 - somatorio dos quadrados");
 printf("\n9 - mmc");
 printf("\n10 - divisao");
 printf("\n11 - raiz quadrada");
@@ -137,13 +161,13 @@ switch(c)
 	case 7:
 	f7();
 	break;
-	/*case 8:
+	case 8:
 	f8();
 	break;
 	case 9:
 	f9();
 	break;
-	case 10:
+	/*case 10:
 	f10();
 	break;
 	case 11:
