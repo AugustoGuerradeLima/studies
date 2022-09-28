@@ -36,6 +36,27 @@ float raiz(float n, float chute)
 	if(chute*chute < n) return(raiz(n,chute*1.5));
 }//end raiz()
 
+int mdc(int a, int b)
+{
+	if(a<b)return(mdc(b,a));
+	if(b==0)return(a);
+	return(mdc(b,a%b));
+}
+
+int mmc(int a, int b)
+{
+//mmc(a,b)= a * b/mdc(a,b) e uma formula para calcular o problema de forma eficiente
+
+/*
+minhas notas
+if(a%b==0)return (a);
+return(a*b); isso seria suficiente para alguns casos como
+100 e 5 ou 3 e 4, mas nao para 20 e 24 por exemplo
+*/
+
+return(a*(b/mdc(a,b)));
+}
+
 int main()
 {
 	int n = 0;
