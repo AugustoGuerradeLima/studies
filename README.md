@@ -1,5 +1,4 @@
 <div>
-<img src='https://c.tenor.com/5ry-200hErMAAAAM/hacker-hacker-man.gif'>
 <img src='https://c.tenor.com/NYrgLNGuy7YAAAAM/the-c-programming-language-uncle-dane.gif'>
 </div>
 <h1>c-logic</h1>
