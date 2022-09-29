@@ -111,7 +111,55 @@ void f9()
 {
 	int a,b;
 	scanf("%d%d",&a,&b);
-	printf("o mmc e: %d\n",mmc(a,b));
+	printf("\no mmc e: %d\n",mmc(a,b));
+}
+//--------------------------------------------questao1j
+int div(int a, int b)
+{
+	if(a<b)return(0);
+	/*if(a-b<b)return(1);*/
+	return(1+div(a-b,b));
+}
+void f10()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("\na divisao inteira e: %d\n",div(a,b));
+}
+//--------------------------------------------questao1j
+float raiz(float n)
+{
+	
+}
+void f11()
+{
+	float n;
+	scanf("%f",&n);
+	printf("\na raiz quadrada de %f e %f\n",n,raiz(n));
+}
+//--------------------------------------------questao1m
+int dig(int n)
+{
+	if(n%10==n)return(n);
+	return(n%10+dig(n/10));
+}
+void f12()
+{
+	int n;
+	scanf("%d",&n);
+	printf("\na soma dos digitos de %d e %d\n",n,dig(n));
+}
+//--------------------------------------------questao1n
+int expoente(int k,int n)
+{
+	if(n==0)return(1);
+	return(k*(expoente(k,n-1)));
+}
+void f13()
+{
+	int k,n;
+	scanf("%d%d",&k,&n);
+	printf("\nk^n e: %d\n",expoente(k,n));
 }
 //--------------------------------------------questao1o
 void crescente(int n)
@@ -147,7 +195,7 @@ printf("\n8 - somatorio dos quadrados");
 printf("\n9 - mmc");
 printf("\n10 - divisao");
 printf("\n11 - raiz quadrada");
-printf("\n12 - soma digitos");
+printf("\n12 - soma dos digitos");
 printf("\n13 - exponecial");
 printf("\n14 - crescente\n");
 scanf("%d",&c);
@@ -183,18 +231,18 @@ switch(c)
 	case 9:
 	f9();
 	break;
-	/*case 10:
+	case 10:
 	f10();
 	break;
-	case 11:
+	/*case 11:
 	f11();
-	break;
+	break;*/
 	case 12:
 	f12();
 	break;
 	case 13:
 	f13();
-	break;*/
+	break;
 	case 14:
 	f14();
 	break;
