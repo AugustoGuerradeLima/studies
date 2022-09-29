@@ -111,7 +111,23 @@ void f9()
 {
 	int a,b;
 	scanf("%d%d",&a,&b);
-	mmc(a,b);
+	printf("o mmc e: %d\n",mmc(a,b));
+}
+//--------------------------------------------questao1o
+void crescente(int n)
+{
+	if(n==0){printf("%d\n",n);}
+	else
+	{
+	crescente(n-1);
+	printf("%d\n",n);
+	}
+}
+void f14()
+{
+	int n;
+	scanf("%d",&n);
+	crescente(n);
 }
 //--------------------------------------------questao2(main)
 int main()
@@ -179,6 +195,9 @@ switch(c)
 	case 13:
 	f13();
 	break;*/
+	case 14:
+	f14();
+	break;
 	default:
 	printf("\nvalor invalido\n");
 	break;
