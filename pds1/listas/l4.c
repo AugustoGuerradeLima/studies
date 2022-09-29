@@ -10,7 +10,7 @@ void f1()
 {
 	int n = 0 ;
 	scanf("%d",&n);
-	fat(n);
+	printf("\no fatorial de %d e %d\n",n,fat(n));
 }
 //--------------------------------------------questao1b
 int mdc(int a, int b)
@@ -46,7 +46,7 @@ void f4()
 {
 	int n = 0;
 	scanf("%d",&n);
-	printf("%d",fib(n));
+	printf("\no fibonacci de %d e %d\n",n,fib(n));
 }
 //--------------------------------------------questao1e
 int primo(int n, int d)
@@ -59,7 +59,7 @@ void f5()
 {
 	int n = 0;
 	scanf ("%d",&n);
-	printf("%d",primo(n,sqrt(n)));
+	printf("\ne primo ?: %d\n",primo(n,sqrt(n)));
 }
 //--------------------------------------------questao1f
 void decrescente(int n)
@@ -67,7 +67,7 @@ void decrescente(int n)
 	if(n==1){printf("%d\n",n);}
 	else
 	{
-	printf("%d\n",n);
+	printf("\t%d\n",n);
 	decrescente(n-1);
 	}
 }
@@ -126,16 +126,18 @@ void f10()
 	scanf("%d%d",&a,&b);
 	printf("\na divisao inteira e: %d\n",div(a,b));
 }
-//--------------------------------------------questao1j
-float raiz(float n)
+//--------------------------------------------questao1l
+float raiz(float n, float chute)
 {
-	
+	if(chute*chute >= n-0.001 && chute*chute <= n+0.001)return(chute);
+	if(chute*chute>n)return(raiz(n,chute*0.5));
+	if(chute*chute<n)return(raiz(n,chute*1.5));
 }
 void f11()
 {
-	float n;
-	scanf("%f",&n);
-	printf("\na raiz quadrada de %f e %f\n",n,raiz(n));
+	float n,chute;
+	scanf("%f%f",&n,&chute);
+	printf("\na raiz quadrada de %f e %3f\n",n,raiz(n,chute));
 }
 //--------------------------------------------questao1m
 int dig(int n)
@@ -168,7 +170,7 @@ void crescente(int n)
 	else
 	{
 	crescente(n-1);
-	printf("%d\n",n);
+	printf("\t%d\n",n);
 	}
 }
 void f14()
@@ -234,9 +236,9 @@ switch(c)
 	case 10:
 	f10();
 	break;
-	/*case 11:
+	case 11:
 	f11();
-	break;*/
+	break;
 	case 12:
 	f12();
 	break;
