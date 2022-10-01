@@ -1,3 +1,4 @@
+//AugustoGuerradeLima - 2022101086
 #include <stdio.h>
 #include <math.h>
 //--------------------------------------------questao1a
