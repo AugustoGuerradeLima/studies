@@ -57,6 +57,7 @@ void f5()
 	scanf ("%d",&n);
 	printf("\ne primo ?: %d\n",primo(n));
 }
+
 //--------------------------------------------main
 int main()
 {
