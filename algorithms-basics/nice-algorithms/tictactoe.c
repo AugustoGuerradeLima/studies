@@ -41,10 +41,7 @@ int checkSpaces()
     return freeSpaces;
 }
 
-void playerMove()
-{
-    
-}
+
 
 int main()
 {
@@ -53,7 +50,6 @@ int main()
     while(winner == ' ' && checkSpaces())
     {
         printBoard();
-        playerMove();
     }
     return(0);
 }
