@@ -27,7 +27,5 @@ int main()
 
     printf("\n");//quebra uma linha
 
-    //losango(size);//funcao losango
-
     return(0);//finaliza sem erros
 }//end main()
