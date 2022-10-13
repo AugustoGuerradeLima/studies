@@ -8,7 +8,7 @@ void quad(int a , int b)
         printf("%d\t",b*b);
     }
 }
-int main()
+int main() 
 {
     quad(2,5);
     return(0);
