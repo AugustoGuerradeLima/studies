@@ -5,7 +5,7 @@ int main()
     int i, j, key; // data
     int A[] = {5, 2, 4, 6, 1, 3};
 
-    for (j = 1; j <= 6; j = j + 1)
+    for (j = 1; j <= 6; j = j + 1) 
     {
         key = A[j];
         // inserir A[j] na sequência ordenada A[1...j-1]
