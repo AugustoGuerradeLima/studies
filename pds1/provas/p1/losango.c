@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 //2 programa dividido em tres partes preste atencao
 void losango(int size)
