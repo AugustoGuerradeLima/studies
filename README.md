@@ -8,6 +8,7 @@ codes for programming and software development ufmg.<br>
 L> listas -> sequential programming exercises;<br>
 L> tps -> works and vpls;<br>
 L> contribuição -> contributors' resolution.
+L>
 <h1>ed-20221-theldo</h1>
 all theldo resolutions of the first period of 2022.
 <h1>algorithm-basics</h1>
