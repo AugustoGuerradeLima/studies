@@ -8,6 +8,8 @@ void printMatrix(int m[][],int row, int column){
         printf("\n");
     }
 }//end printmatrix
+//----------------------------------------------------------------------questao1
+//----------------------------------------------------------------------questao2
 int main(){
     int c = 0;
     do
