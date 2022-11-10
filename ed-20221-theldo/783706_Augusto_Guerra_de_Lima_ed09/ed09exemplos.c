@@ -771,7 +771,7 @@ int main()
 
         default:
             printf("ERROR - invalid value\n");
-            break;
+            break; 
         }
     } while (choice != 0); // end repeat
 
