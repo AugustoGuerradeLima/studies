@@ -1,4 +1,5 @@
 //Augusto Guerra de Lima 2022101086
+//Como C nao possui encapsulamento precisa compilar com g++
 #include <stdio.h>
 #include <math.h>
 //q1
