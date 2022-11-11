@@ -17,7 +17,7 @@ struct Triangulo {
 	bool equilatero();
 	bool semelhante(Triangulo& t);
 };
-typedef Triangulo ref_Triangulo;
+typedef Triangulo* ref_Triangulo;
 struct Retangulo{
     Ponto p1,p2,p3,p4;
     float perimetro();
