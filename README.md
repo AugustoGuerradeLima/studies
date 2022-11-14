@@ -14,5 +14,5 @@ all theldo resolutions of the first period of 2022.
 <h1>algorithm-basics</h1>
 essential and useful or fun algorithms.<br>
 L>nice-algorithms -> fun and challenging.<br>
-L>sort -> sort algorithms, theory.
+L>sort -> theory.
 
