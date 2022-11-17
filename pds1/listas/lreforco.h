@@ -36,6 +36,19 @@ int smallerK(int* data, int n, int k){
     }
     return(result);
 }
+//position
+/*
+int m(int* a,int n){
+    int numero = a[0];
+    int k = 0;
+    for(int i = k; i< n; i++){
+        if(a[i]>a[k]){
+            k=i;
+        }
+    }
+    return(k);
+}
+*/
 //----------------------------------------------------------------------5)
 void insertionSort(int* data, int n){
     int i,j,k;
