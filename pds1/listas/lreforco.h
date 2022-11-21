@@ -62,3 +62,4 @@ void insertionSort(int* data, int n){
         *(data + j) = k;
     }
 }
+//selection sort use 3 and 4
