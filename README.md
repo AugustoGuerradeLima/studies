@@ -2,7 +2,7 @@
 <p>
 This repository intends to store an immensity of algorithms studied and written during the time by me.
 The algorithms folder stores the most famous algorithms that you are likely to study in any computer course.
-The high school folder stores some of the code I used in high school for classes and preparing for tests.
+The college folder stores some of the code I used in college for classes and preparing for tests.
 </p>
 
 <h1>About C</h1>
