@@ -10,11 +10,11 @@ int binarySearch(int* array, int guess, int value, int size){
         if(*(array + guess)<value){
             max = guess - 1;
         }
-        if(*(array + guess)>value){
+        if(*(array + guess)>value){ 
             min = guess + 1;
         }
     }
-    return(-1);
+    return(-1); 
 }
 int main(){
     return(0);
