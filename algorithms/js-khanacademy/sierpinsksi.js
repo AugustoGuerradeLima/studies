@@ -13,7 +13,7 @@ var drawGasket = function(x, y, dim) {
     }
 };
 draw = function() {
-    background(255, 255, 255);
+    background(255, 255, 255); 
     fill(255, 255, 0);
     rect(0, 0, dim, dim);
     stroke(0, 0, 255);
