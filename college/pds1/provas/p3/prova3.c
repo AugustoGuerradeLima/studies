@@ -7,7 +7,7 @@ struct Aluno{
 };
 //aprovados
 int aprovados(struct Aluno*alunos,int n){
-    int quantidade = 0;
+    int quantidade = 0; 
     float media;
     for(int i=0; i<n ;i++){
         media =0.0;
