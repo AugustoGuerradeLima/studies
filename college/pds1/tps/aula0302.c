@@ -1,10 +1,10 @@
 #include <stdio.h>
-int main()
+int main() 
 {
-    int a,b,c;
-    scanf("%d%d%d",&a,&b,&c);
-    if(a>b&&a>c)printf("%d",a);
-    if(b>a&&b>c)printf("%d",b);
-    if(c>a&&c>b)printf("%d",c);
-    return(0);
+    int n1, n2, n3, max;
+    scanf("%d%d%d",&n1,&n2,&n3);
+    max = n1 > n2 ? n1 : n2;
+    max = max > n3 ? max : n3;
+    printf("%d\n", max);
+    return (0);
 }
