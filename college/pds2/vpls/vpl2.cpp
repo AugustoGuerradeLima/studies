@@ -54,6 +54,9 @@ void concatenar_string(string &begin, string end) {
 // inicializa-las com o identificador da sua posição
 void aloca_array(int** arr) {
     *arr=(int*)malloc(sizeof(int)*10);
+       for (int i = 0; i < 10; i++) {
+        (*arr)[i] = i;
+    }
 }
 
 // 9) A funcao deve exibir os valores armazenados em um array
