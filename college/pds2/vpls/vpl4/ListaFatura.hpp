@@ -2,20 +2,20 @@
 #define LISTAFATURA_HPP
 #include <iostream>
 #include "Fatura.hpp"
-struct celula{
-    ref_fatura _dado;
-    ref_celula _proximo;
-    ref_celula _anterior;
-    celula(ref_fatura dado);
+struct Celula{
+    ref_Fatura _dado;
+    Celula* _proximo;
+    Celula* _anterior;
+    Celula(ref_Fatura dado);
 };
-typedef celula* ref_celula;
-struct lista_fatura{
-    ref_celula _inicio;
-    ref_celula _fim;
-    lista_fatura();
-    void insere_fatura(ref_fatura fatura);
-    ref_fatura proxima_fatura();
+typedef Celula* ref_Celula;
+struct ListaFatura{
+    ref_Celula _inicio;
+    ref_Celula _fim;
+    ListaFatura();
+    void insere_Fatura(ref_Fatura Fatura);
+    ref_Fatura proxima_Fatura();
     void imprimir_lista();
 };
-typedef lista_fatura* ref_lista_fatura;
+typedef ListaFatura* ref_ListaFatura;
 #endif
