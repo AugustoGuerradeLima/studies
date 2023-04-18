@@ -39,5 +39,5 @@ void avaliacao_basica() {
 
     lista.imprimir_lista();
 }
-
+ 
 #endif
