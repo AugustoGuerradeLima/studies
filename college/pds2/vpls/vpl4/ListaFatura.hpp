@@ -13,8 +13,8 @@ struct ListaFatura{
     ref_Celula _inicio;
     ref_Celula _fim;
     ListaFatura();
-    void insere_Fatura(ref_Fatura Fatura);
-    ref_Fatura proxima_Fatura();
+    void insere_fatura(ref_Fatura Fatura);
+    ref_Fatura proxima_fatura();
     void imprimir_lista();
 };
 typedef ListaFatura* ref_ListaFatura;

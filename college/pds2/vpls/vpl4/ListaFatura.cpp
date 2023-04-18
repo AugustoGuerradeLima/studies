@@ -4,7 +4,7 @@
 using namespace std;
 Celula::Celula(ref_Fatura dado):_dado(dado),_proximo(nullptr),_anterior(nullptr){};
 ListaFatura::ListaFatura():_inicio(nullptr),_fim(nullptr){};
-void ListaFatura::insere_Fatura(ref_Fatura dado){
+void ListaFatura::insere_fatura(ref_Fatura dado){
     ref_Celula nova_Celula = new Celula(dado);//construtor da nova Celula
     if(_inicio==nullptr){//verifica se a lista esta vazia
         _inicio = nova_Celula; 
@@ -31,7 +31,7 @@ void ListaFatura::insere_Fatura(ref_Fatura dado){
         i->_anterior = nova_Celula;
     }
 }
-ref_Fatura ListaFatura::proxima_Fatura(){
+ref_Fatura ListaFatura::proxima_fatura(){
     if(_inicio==nullptr)return nullptr;
     ref_Celula resultado = _inicio;
     _inicio->_proximo->_anterior = nullptr;
