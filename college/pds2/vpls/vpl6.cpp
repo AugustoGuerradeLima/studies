@@ -19,8 +19,6 @@ int main()
     map<char,pair<int,int>>associacao;
 
     vector<vector<pair<int,int>>>lista_senha_pares;
-    vector<vector<char>>lista_senhas_codificadas;
-    vector<map<char,pair<int,int>>>lista_associacoes;
 
     getline(cin, linha);
     stringstream stream_linha(linha); 
@@ -40,17 +38,12 @@ int main()
         char letra = 'A';
         for(int i=1;i<=10;i+=2){
             associacao[letra]=make_pair(numeros[i-1],numeros[i]);
-            // cout<<letra<<":"<<numeros[i-1]<<" "<<numeros[i]<<endl;//teste de funcionamento associacao de letras a pares
             letra++;
         }
         for(char c:senha_codificada){
-            // cout<<c;//teste pra ver se o for funciona
             senha_pares.push_back(make_pair(associacao[c].first,associacao[c].second));
-            // cout << "c[" << c << "] = (" << associacao[c].first << ", " << associacao[c].second << ")" << endl;
         }
         lista_senha_pares.push_back(senha_pares);
-        lista_senhas_codificadas.push_back(senha_codificada);
-        lista_associacoes.push_back(associacao);
         numeros.clear();
         senha_codificada.clear();
         senha_pares.clear();
@@ -69,10 +62,7 @@ int main()
                 digito = lista_senha_pares[j][i].second;
             }
         }
-        senha_decodificada.push_back(digito);
-    }
-    for(int i:senha_decodificada){
-        cout<<i<<" ";
+        cout<<digito<<" ";
     }
     return(0);
 }
