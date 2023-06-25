@@ -1,1 +1,0 @@
-ed08 - completo, todos os exemplos como pedidos
