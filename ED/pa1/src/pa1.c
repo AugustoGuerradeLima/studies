@@ -147,9 +147,11 @@ void shellSort(int *a, int n, sortperf_t * s)
 	int k=0;
 
 	for(int h=n/2; h>0; h/=2)
-	{	
+	{		
 		for(int i=h; i<n; i++)
 		{	
+			inccmp(s,1);
+
 			aux=*(a+i);
 			incmove(s,1);
 
@@ -228,8 +230,9 @@ void insertionSort(int* a, int l, int r, sortperf_t * s)
 	int k=0;
 	int aux=0;
 	
-	for(i=1; i<=r; i++)
-	{
+	for(i=l+1; i<=r; i++)
+	{	
+		inccmp(s,1);
 		k=i-1;
 		aux=*(a+i);
 		incmove(s,1);
@@ -265,8 +268,7 @@ void partition3(int* a, int l, int r, int *i, int *j, sortperf_t* s)
 
 	*i=l;
 	*j=r;
-	int aux;
-
+	
 	int p=median(*(a+l),a[(l+r)/2],*(a+r));
 
 	do
@@ -288,11 +290,7 @@ void partition3(int* a, int l, int r, int *i, int *j, sortperf_t* s)
 		inccmp(s,1);
 		if(*i<=*j)
 		{
-			aux=*(a+(*i));
-			*(a+(*i))=*(a+(*j));
-			*(a+(*j))=aux;
-			
-			incmove(s,3);
+			swap(&a[*i],&a[*j],s);
 
 			(*i)++;
 			(*j)--;	
@@ -332,12 +330,7 @@ void partition(int* a, int l, int r, int *i, int *j, sortperf_t* s)
 		inccmp(s,1);
 		if(*i<=*j)
 		{
-			aux=*(a+(*i));
-			*(a+(*i))=*(a+(*j));
-			*(a+(*j))=aux;
-			
-			incmove(s,3);
-
+			swap(&a[*i],&a[*j],s);
 			(*i)++;
 			(*j)--;	
 		}
@@ -387,10 +380,31 @@ void quickSortIns(int * a, int l, int r, sortperf_t *s)
 		int i=l;
 		int j=r;
 		partition(a,l,r,&i,&j,s);
-		
-		((j-l)<=50 && l<j) ? insertionSort(a, l, j, s) : quickSortIns(a, l, j, s);
 
-		((r-i)<=50 && i<r) ? insertionSort(a, i, r, s) : quickSortIns(a, i, r, s);
+		if((j-l)<=50)
+		{
+			if(l<j)
+			{
+				insertionSort(a,l,j,s);
+			}
+		}
+		else
+		{
+			quickSortIns(a,l,j,s);
+		}
+
+		if((r-i)<=50)
+		{
+			if(i<r)
+			{
+				insertionSort(a,i,r,s);
+			}
+		}
+		else
+		{
+			quickSortIns(a,i,r,s);
+		}
+
 	}
 }
 
@@ -404,9 +418,30 @@ void quickSort3Ins(int * a, int l, int r, sortperf_t *s)
 		int j=r;
 		partition3(a,l,r,&i,&j,s);
 		
-		((j-l)<=50 && l<j) ? insertionSort(a, l, j, s) : quickSort3Ins(a, l, j, s);
+		if((j-l)<=50)
+		{
+			if(l<j)
+			{
+				insertionSort(a,l,j,s);
+			}
+		}
+		else
+		{
+			quickSort3Ins(a,l,j,s);
+		}
 
-		((r-i)<=50 && i<r) ? insertionSort(a, i, r, s) : quickSort3Ins(a, i, r, s);
+		if((r-i)<=50)
+		{
+			if(i<r)
+			{
+				insertionSort(a,i,r,s);
+			}
+		}
+		else
+		{
+			quickSort3Ins(a,i,r,s);
+		}
+
 	}
 
 }
@@ -546,7 +581,7 @@ int main (int argc, char ** argv){
   clkDiff(inittp, endtp, &restp);
 
 
-  if (opt.size<100) printVector(vet, opt.size);
+  //if (opt.size<100) printVector(vet, opt.size);
 
   // print stats
   sprintf(pref,"alg %s seed %d size %d time %ld.%.9ld",
