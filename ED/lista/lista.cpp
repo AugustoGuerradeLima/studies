@@ -238,3 +238,10 @@ void ListaEncadeada::Limpa()
 	ultimo = primeiro;
 	tamanho = 0;
 }//Desvantagem em relacao ao sequencia O(n)
+
+
+
+
+
+
+
