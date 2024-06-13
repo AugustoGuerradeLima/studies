@@ -28,10 +28,11 @@ int K(Grafo* g)
 int main(int argc, char* argv[])
 {
 	int n, m, w; scanf("%d",&n);
-	Grafo* g = NovoGrafo(n);
+	Grafo* g = NovoGrafo();
 
 	for(int i=0; i<n; i++)
 	{
+		InsereVertice(g);
 		scanf("%d", &m);
 		while(m--)
 		{

@@ -22,7 +22,7 @@ typedef struct s_grafo
 }
 Grafo;
 
-Grafo* NovoGrafo(int _V);
+Grafo* NovoGrafo();
 void DeletaGrafo(Grafo* g);
 void InsereVertice(Grafo* g);
 void InsereAresta(Grafo* g, int v, int w);
@@ -32,18 +32,18 @@ int GrauMinimo(Grafo* g);
 int GrauMaximo(Grafo* g);
 void ImprimeVizinhos(Grafo* g, int v);
 
-Grafo* NovoGrafo(int _V)
+Grafo* NovoGrafo()
 {
 	Grafo* g = (Grafo*)malloc(sizeof(Grafo));
-	g->V=_V;
+	g->V=0;
 	g->E=0;
-	g->adj = (Lista*)malloc(_V*sizeof(Lista));
+	//g->adj = (Lista*)malloc(_V*sizeof(Lista));
 	
-	for(int i=0;i<_V;i++)
-	{
-		g->adj[i].head=NULL;
-		g->adj[i].grau=0;
-	}
+	//for(int i=0;i<_V;i++)
+	//{
+	//	g->adj[i].head=NULL;
+	//	g->adj[i].grau=0;
+	//}
 	return(g);
 }
 
