@@ -27,6 +27,8 @@ public:
 class avl_tree
 {
 	node* root;
+	void recursive_insert(node* &p, int _item);
+	void recursive_delete(node* p);
 	int quadratic_height(node* p);
 	int quadratic_balance_factor(node* p);
 	int balance_factor(node* p);
@@ -39,6 +41,18 @@ public:
 	void insert(int _item);
 	void clean();
 };
+
+avl_tree::avl_tree()
+{
+	this->root = nullptr;
+}
+
+avl_tree::~avl_tree()
+{
+	clean();
+}
+
+//calculo do fator de balanceamento na arvore binaria avl
 
 int avl_tree::quadratic_height(node* p)
 {	
@@ -57,6 +71,8 @@ int avl_tree::balance_factor(node* p)
 	if(p==nullptr)return(0);
 	return(p->right->height - p->left->height);
 }
+
+//rotacoes e se o avo for nullptr pensar sobre isso
 
 void avl_tree::to_left(node* p)
 {
@@ -108,7 +124,40 @@ void avl_tree::to_right(node* p)
 
 void avl_tree::insert(int _item)
 {
-	//quando inserir ver se altura do filho e igual a do pai e se sim tem que atualizar as novas alturas dos nos
+	recursive_insert(this->root, _item);
+}
+
+void avl_tree::recursive_insert(node* &p, int _item)
+{
+	if(p==nullptr)
+		p = new node(_item);
+	else
+	{
+		if(_item < p->item)
+			recursive_insert(p->left, _item);
+		else
+			recursive_insert(p->right, _item);
+
+		//atualiza a altura do pai
+	}
+}
+
+//limpando
+
+void avl_tree::clean()
+{
+	recursive_delete(this->root);
+	this->root=nullptr;
+}
+
+void avl_tree::recursive_delete(node* p)
+{
+	if(p!=nullptr)
+	{
+		recursive_delete(p->left);
+		recursive_delete(p->right);
+		delete p;
+	}
 }
 
 #endif
